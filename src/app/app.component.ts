@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter } from '@angular/core';
+import { Recipe } from './recipes/recipe.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-recipe';
+  selectedPage : string;
+
+  constructor () {
+    this.selectedPage = 'recipes';
+  }
+
+  pageSelected(name: string) {
+    this.selectedPage = name;
+  }
+
 }
